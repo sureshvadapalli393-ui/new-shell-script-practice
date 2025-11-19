@@ -2,10 +2,35 @@
 
 SUDO_ID=$(id -u)
 
-if[ $SUDO_ID -eq 0 ]; then
+if [$SUDO_ID -ne 0]; then
+echo "dont have sudo access"
+exit 1
+fi
+dnf install mysql -y
+
+if [$? -ne 0]; then
+echo "error: installing mysql is failure"
+exit
+
+else
+echo "installing mysql server is success"
+fi
+
 dnf install nginx -y
 
-else 
-echo "sudo user
-exit 1
+if [$? -ne 0]; then
+echo "error: installing nginxfailure"
+exit
+
+else
+echo "installing nginxserver is success"
+fi
+
+dnf install mongodb-mongosh -y
+if [$? -ne 0]; then
+echo "error: installing mongodb failure
+exit
+
+else
+echo "installing mongodb is usccess"
 fi
