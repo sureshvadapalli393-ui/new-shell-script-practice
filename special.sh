@@ -4,4 +4,4 @@ echo "all variables passed to the script : $*"
 echo "script name : $0"
 echo "current working directory: $PWD"
 COURSE=("devops" "linux" "ansible" "python" "2" "3" "56" "69")
-echo ${COURSE[@]}
+echo ${COURSE[5]}
