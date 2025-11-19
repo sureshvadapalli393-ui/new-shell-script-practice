@@ -6,4 +6,4 @@ sleep 20
 
 END_TIME=$(date +%s)
 
-echo "script executed time taken: ($(END_TIME-START_DATE))"
+echo "script executed time taken: $((END_TIME-START_DATE))"
