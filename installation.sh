@@ -3,18 +3,18 @@
 SUDO_ID=$(id -u)
 
 if [ $SUDO_ID -ne 0 ] ; then
-echo "dont have sudo access"
+echo -e "\e[31m dont have access"
 exit 1
 fi
 
 
 VALIDATE(){
     if [ $1 -ne 0 ]; then
-    echo "Error: installing $2 is failure"
+    echo "\e[31m installing $2 is failure"
     exit 1
 
     else
-    echo " installing $2 is success"
+    echo "\e[32m ling $2 is success"
     fi 
 
 }
