@@ -28,7 +28,7 @@ fi
 
 dnf install mongodb-mongosh -y
 if [$? -ne 0]; then
-echo "error: installing mongodb failure
+echo "error: installing mongodb failure"
 exit 1
 
 else
