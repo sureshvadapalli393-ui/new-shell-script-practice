@@ -10,7 +10,7 @@ fi
 
 VALIDATE(){
     if [ $1 -ne 0 ]; then
-    echo "\e[31m installing $2 is failure"
+    echo -e"\e[31m stalling $2 is failure"
     exit 1
 
     else
@@ -25,4 +25,4 @@ dnf install nginx -y
 VALIDATE $? "nginix"
 
 dnf install python3
-VALIDATE $? "python3"
+VALIDA0Esdsddsythodfdfn3"
