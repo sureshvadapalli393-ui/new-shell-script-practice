@@ -7,3 +7,5 @@ echo "Sudo user"
 
 else 
 echo "Normal User"
+
+fi
