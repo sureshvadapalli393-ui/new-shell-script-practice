@@ -2,7 +2,7 @@
 
 SUDO_ID=$(id -u)
 
-if[ $SUDO_ID]; then
+if[ $SUDO_ID -eq 0]; then
 echo "no acces"
 exit 1
 else 
