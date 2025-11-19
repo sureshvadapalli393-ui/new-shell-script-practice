@@ -2,7 +2,7 @@
 
 SUDO_ID=$(id -u)
 
-if [ $SUDO_ID -ne 0]; then
+if [ $SUDO_ID -ne 0 ] ; then
 echo "dont have sudo access"
 exit 1
 fi
