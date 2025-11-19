@@ -29,7 +29,7 @@ fi
 dnf install mongodb-mongosh -y
 if [$? -ne 0]; then
 echo "error: installing mongodb failure
-exit
+exit 1
 
 else
 echo "installing mongodb is usccess"
