@@ -3,7 +3,5 @@ echo "All variables passed to the script: $@"
 echo "all variables passed to the script : $*"
 echo "script name : $0"
 echo "current working directory: $PWD"
-
-
-NAME=devops
-echo $NAME
+COURSE=devops
+echo $COURSE
