@@ -1,5 +1,9 @@
 #!/bin/bash
 
-DATE=$(date +%S)
+START_DATE=$(date +%s)
 
-echo "today date is $DATE"
+sleep 20 &
+
+END_TIME=$(date +%s)
+
+echo "script executed time taken: (($END_TIME-$START_DATE))"
