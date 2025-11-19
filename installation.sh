@@ -6,31 +6,23 @@ if [$SUDO_ID -ne 0]; then
 echo "dont have sudo access"
 exit 1
 fi
+
+
+VALIDATE(){
+    if [ $1 -ne 0 ]; then
+    echo "Error: installing $2 is failure"
+    exit 1
+
+    else
+    echo " installing $2 is success"
+    fi 
+
+}
 dnf install mysql -y
-
-if [$? -ne 0]; then
-echo "error: installing mysql is failure"
-exit
-
-else
-echo "installing mysql server is success"
-fi
+VALIDATE $? "MYSQL"
 
 dnf install nginx -y
-
-if [$? -ne 0]; then
-echo "error: installing nginxfailure"
-exit
-
-else
-echo "installing nginxserver is success"
-fi
+VALIDATE $? "nginix"
 
 dnf install mongodb-mongosh -y
-if [$? -ne 0]; then
-echo "error: installing mongodb failure"
-exit 1
-
-else
-echo "installing mongodb is usccess"
-fi
+VALIDATE $? "mongodb"
