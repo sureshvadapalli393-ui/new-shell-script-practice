@@ -4,7 +4,6 @@ SUDO_ID=$(id -u)
 
 if [ $SUDO_ID -ne 0 ] ; then
 echo -e "\e[31m dont have access"
-exit 1
 fi
 
 dnf install mysql -y
@@ -13,5 +12,5 @@ if [ $? -ne 0 ]; then
 echo "error: Installing mysql is failure"
 
 else 
-echo "Installing mysql is success"
+echo -e "\e[30m Installing mysql is success"
 fi
