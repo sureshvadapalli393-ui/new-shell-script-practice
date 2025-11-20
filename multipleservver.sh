@@ -11,33 +11,23 @@ echo -e "$RED dont have access"
 exit 1
 fi
 
+VALIDATE(){
+    if [ $1 -ne 0 ]; then 
+        echo -e "$RED error: Installing $2 is failure"
+        exit 1
+
+    else 
+        echo -e "$GREEN Installing $2 is success"
+    fi
+}
+
 dnf install mysql -y
+VALIDATE $? "MySQL"
 
-if [ $? -ne 0 ]; then 
-echo -e "$RED error: Installing mysql is failure"
-exit 1
-
-else 
-echo -e "$GREEN Installing mysql is success"
-fi
 
 dnf install nginx -y
+VALIDATE $? "Nginx"
 
-if [ $? -ne 0 ]; then 
-echo -e "$RED error: Installing Nginx is failure"
-exit 1
-
-else 
-echo -e "$GREEN Installing Nginx is success"
-fi
 
 dnf install mongodb-mongosh -y
-
-if [ $? -ne 0 ]; then 
-echo -e "$RED error: Installing Mongodb is failure"
-exit 1
-
-else 
-echo -e "$GREEN Installing Mongodb is success"
-fi
-
+VALIDATE $? "mongodb"
