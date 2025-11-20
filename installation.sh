@@ -4,6 +4,7 @@ SUDO_ID=$(id -u)
 
 if [ $SUDO_ID -ne 0 ] ; then
 echo -e "\e[31m dont have access"
+exit 1
 fi
 
 dnf install mysql -y
