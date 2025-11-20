@@ -4,25 +4,13 @@ SUDO_ID=$(id -u)
 
 if [ $SUDO_ID -ne 0 ] ; then
 echo -e "\e[31m dont have access"
-exit 1
 fi
 
-
-VALIDATE(){
-    if [ $1 -ne 0 ]; then
-    echo -e"\e[31m stalling $2 is failure"
-    exit 1
-
-    else
-    echo "\e[32m ling $2 is success"
-    fi 
-
-}
 dnf install mysql -y
-VALIDATE $? "MYSQL"
 
-dnf install nginx -y
-VALIDATE $? "nginix"
+if [ $? -ne 0 ]; then 
+echo "error: Installing mysql is failure"
 
-dnf install python3
-VALIDA0Esdsddsythodfdfn3"
+else 
+echo "Installing mysql is success"
+fi
