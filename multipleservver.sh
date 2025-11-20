@@ -3,6 +3,7 @@
 RED="\e[31m"
 GREEN="\e[32m"
 YELLOW="\e[33m"
+N="\e[0m"
 
 SUDO_ID=$(id -u)
 
@@ -21,13 +22,38 @@ VALIDATE(){
     fi
 }
 
-dnf install mysql -y
-VALIDATE $? "MySQL"
+dnf list installed mysql
+
+if[ $? -ne 0 ]; then
+    dnf install mysql -y
+    VALIDATE $? "MySQL"
+
+else 
+    echo "$YELLOW mysql already exist...SKIPPING $N"
+
+fi
+
+dnf list installed nginx
+
+if[ $? -ne 0 ]; then
+    dnf install nginx -y
+    VALIDATE $? "Nginx"
+
+else 
+    echo "$YELLOW nginx already exist...SKIPPING $N"
+
+fi
+
+dnf list installed python3
 
 
-dnf install nginx -y
-VALIDATE $? "Nginx"
+if[ $? -ne 0 ]; then
+    dnf install python3 -y
+    VALIDATE $? "python3"
+
+else 
+    echo "$YELLOW python3 already exist...SKIPPING $N"
+
+fi
 
 
-dnf install python3 -y
-VALIDATE $? "python3"
