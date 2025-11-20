@@ -29,7 +29,7 @@ if[ $? -ne 0 ]; then
     VALIDATE $? "MySQL"
 
 else 
-    echo "$YELLOW mysql already exist...SKIPPING $N"
+    echo -e "$YELLOW mysql already exist...SKIPPING $N"
 
 fi
 
@@ -40,7 +40,7 @@ if[ $? -ne 0 ]; then
     VALIDATE $? "Nginx"
 
 else 
-    echo "$YELLOW nginx already exist...SKIPPING $N"
+    echo -e "$YELLOW nginx already exist...SKIPPING $N"
 
 fi
 
@@ -52,7 +52,7 @@ if[ $? -ne 0 ]; then
     VALIDATE $? "python3"
 
 else 
-    echo "$YELLOW python3 already exist...SKIPPING $N"
+    echo -e "$YELLOW python3 already exist...SKIPPING $N"
 
 fi
 
