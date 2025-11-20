@@ -1,6 +1,5 @@
 !#/bin/bash
 
-for i in {1..20}
+for package in $@
 do 
-   echo $i 
-done
+dnf list installed $package &>>

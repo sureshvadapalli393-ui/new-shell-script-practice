@@ -1,0 +1,2 @@
+!#/bin/bash
+aws ec2 run-instances \ --image-id ami-09c813fb71547fc4f \ --instance-type t2.micro \ --security-group-ids sg-0c8311807a45cafaa \ --subnet-id subnet-0abc12345d6ef7890 \ --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=firstserver}]'
