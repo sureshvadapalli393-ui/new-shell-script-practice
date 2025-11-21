@@ -32,11 +32,10 @@ VALIDATE(){
 
 for package in $@
 do
-    dnf list installed $package &>>LOGS_FILE
-    
-    if [ $? -ne 0 ]; then
-        dnf install $package -y &>>LOGS_FILE
-        VALIDATE $? "$package"
-    else
-        echo -e "$package already installed...$YELLOW SKIPPING"
+dnf list installed $package &>>LOGS_FILE
+if [ $? -ne 0 ]; then
+    dnf install $package -y &>>LOGS_FILE
+    VALIDATE $? "$package"
+else
+    echo -e "$package already installed...$YELLOW SKIPPING"
 done
