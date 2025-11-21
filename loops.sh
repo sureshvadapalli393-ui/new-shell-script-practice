@@ -38,4 +38,5 @@ if [ $? -ne 0 ]; then
     VALIDATE $? "$package"
 else
     echo -e "$package already installed...$YELLOW SKIPPING"
+fi
 done
